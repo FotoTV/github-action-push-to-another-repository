@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM composer:latest
 
 RUN apk add --no-cache git
 
