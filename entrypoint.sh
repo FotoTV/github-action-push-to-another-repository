@@ -30,7 +30,9 @@ ls -la "$CLONE_DIR"
 
 echo "running composer install"
 ls -la
+ls -la drupal/sites/all/modules/custom
 cd "$COMPOSER_DIRECTORY" && composer install && cd -
+ls -la drupal/sites/all/modules/custom
 
 echo "Copying contents to to git repo"
 cp -r "$FOLDER"/* "$CLONE_DIR"
