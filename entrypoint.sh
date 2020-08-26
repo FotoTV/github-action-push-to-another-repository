@@ -6,6 +6,7 @@ GITHUB_USERNAME="$2"
 GITHUB_REPO="$3"
 USER_EMAIL="$4"
 REPO_USERNAME="$5"
+COMPOSER_DIRECTORY="$6"
 
 if [ -z "$REPO_USERNAME" ]
 then
@@ -27,7 +28,7 @@ find "$CLONE_DIR" | grep -v "^$CLONE_DIR/\.git" | grep -v "^$CLONE_DIR$" | xargs
 ls -la "$CLONE_DIR"
 
 echo "running composer install"
-cd "$FOLDER" && composer install && cd -
+cd "$COMPOSER_DIRECTORY" && composer install && cd -
 
 echo "Copying contents to to git repo"
 cp -r "$FOLDER"/* "$CLONE_DIR"
