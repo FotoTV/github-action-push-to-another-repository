@@ -28,6 +28,7 @@ find "$CLONE_DIR" | grep -v "^$CLONE_DIR/\.git" | grep -v "^$CLONE_DIR$" | xargs
 ls -la "$CLONE_DIR"
 
 echo "running composer install"
+ls -la
 cd "$COMPOSER_DIRECTORY" && composer install && cd -
 
 echo "Copying contents to to git repo"
