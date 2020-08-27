@@ -46,4 +46,4 @@ git status
 git commit --message "Update from https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
 
 echo "Pushing git commit"
-git push origin master
+git push --all
