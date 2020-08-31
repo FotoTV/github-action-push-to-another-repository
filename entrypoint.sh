@@ -21,7 +21,7 @@ echo "Cloning destination git repository"
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$GITHUB_USERNAME"
 git clone --single-branch --branch master "https://$API_TOKEN_GITHUB@github.com/$REPO_USERNAME/$GITHUB_REPO.git" "$CLONE_DIR"
-cd $CLONE_DIR && git switch -c $BRANCH && cd -
+cd $CLONE_DIR && git switch -c $BRANCH && git pull -v && cd -
 ls -la "$CLONE_DIR"
 
 echo "Cleaning destination repository of old files"
