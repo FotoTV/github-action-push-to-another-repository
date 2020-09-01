@@ -55,5 +55,5 @@ git pull -v
 git status
 git diff
 git status
-git push -v --all
+git push origin $BRANCH -f
 git status
