@@ -32,7 +32,7 @@ ls -la "$CLONE_DIR"
 echo "running composer install"
 ls -la
 ls -la drupal/sites/all/modules/custom
-cd "$COMPOSER_DIRECTORY" && composer install -vvv && cd -
+cd "$COMPOSER_DIRECTORY" && composer install && cd -
 ls -la drupal/sites/all/modules/custom
 
 # rm .git repos in subdirectories
