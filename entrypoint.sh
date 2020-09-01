@@ -35,6 +35,9 @@ ls -la drupal/sites/all/modules/custom
 cd "$COMPOSER_DIRECTORY" && composer install && cd -
 ls -la drupal/sites/all/modules/custom
 
+# rm .git repos in subdirectories
+find . -name .git | grep -v  "\\$COMPOSER_DIRECTORY/.git" | xargs rm -rf
+
 echo "Copying contents to to git repo"
 cp -r "$FOLDER"/* "$CLONE_DIR"
 cd "$CLONE_DIR"
