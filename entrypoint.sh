@@ -28,8 +28,11 @@ echo "Cleaning destination repository of old files"
 # Copy files into the git and deletes all git
 find "$CLONE_DIR" | grep -v "^$CLONE_DIR/\.git" | grep -v "^$CLONE_DIR$" | xargs rm -rf # delete all files (to handle deletions)
 ls -la "$CLONE_DIR"
-
+git status
+git add .
+git commit --message "Cleanup before https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
 echo "running composer install"
+
 ls -la
 ls -la drupal/sites/all/modules/custom
 cd "$COMPOSER_DIRECTORY" && composer install && cd -
