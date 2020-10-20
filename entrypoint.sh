@@ -21,7 +21,11 @@ echo "Cloning destination git repository"
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$GITHUB_USERNAME"
 git clone --single-branch --branch master "https://$API_TOKEN_GITHUB@github.com/$REPO_USERNAME/$GITHUB_REPO.git" "$CLONE_DIR"
-cd $CLONE_DIR && git switch -c $BRANCH && git fetch -a && git pull -v && cd -
+cd $CLONE_DIR
+git switch -c $BRANCH
+git fetch -a
+git pull -v
+cd -
 ls -la "$CLONE_DIR"
 
 echo "Cleaning destination repository of old files"
@@ -41,6 +45,8 @@ ls -la drupal/sites/all/modules/custom
 # rm .git repos in subdirectories
 find . -name .git | grep -v  "\\$COMPOSER_DIRECTORY/.git" | xargs rm -rf
 
+echo "running compass install"
+
 echo "Copying contents to to git repo"
 cp -r "$FOLDER"/* "$CLONE_DIR"
 cd "$CLONE_DIR"
@@ -53,10 +59,5 @@ git commit --message "Update from https://github.com/$GITHUB_REPOSITORY/commit/$
 
 echo "Pushing git commit"
 git fetch -a
-git status
-git pull -v
-git status
-git diff
-git status
 git push origin $BRANCH -f
 git status
