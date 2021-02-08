@@ -38,10 +38,12 @@ git commit --message "Cleanup before https://github.com/$GITHUB_REPOSITORY/commi
 echo "running composer install"
 
 ls -la
-ls -la drupal/sites/all/modules/custom
-ls -la drupal/sites/all/themes/custom
+echo $COMPOSER_DIRECTORY
+ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/modules/custom
+ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/themes/custom
 cd "$COMPOSER_DIRECTORY" && composer install && cd -
-ls -la drupal/sites/all/modules/custom
+ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/modules/custom
+ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/themes/custom
 
 # rm .git repos in subdirectories
 find . -name .git | grep -v  "\\$COMPOSER_DIRECTORY/.git" | xargs rm -rf
