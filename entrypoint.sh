@@ -45,7 +45,7 @@ echo '/github/workspace/drupal/sites/all/themes'
 ls -la /github/workspace/drupal/sites/all/themes
 echo '/github/workspace/drupal/sites/all/themes/custom'
 ls -la /github/workspace/drupal/sites/all/themes/custom
-cd "$COMPOSER_DIRECTORY" && composer install && cd -
+cd "$COMPOSER_DIRECTORY" && composer install -vvv && cd -
 ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/modules/custom
 ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/themes/custom
 ls -la /github/workspace
