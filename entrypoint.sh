@@ -39,8 +39,12 @@ echo "running composer install"
 
 ls -la
 echo $COMPOSER_DIRECTORY
-ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/modules/custom
-ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/themes/custom
+echo "/github/workspace//drupal/sites/all/modules/custom"
+ls -la /github/workspace//drupal/sites/all/modules/custom
+echo '/github/workspace/drupal/sites/all/themes'
+ls -la /github/workspace/drupal/sites/all/themes
+echo '/github/workspace/drupal/sites/all/themes/custom'
+ls -la /github/workspace/drupal/sites/all/themes/custom
 cd "$COMPOSER_DIRECTORY" && composer install && cd -
 ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/modules/custom
 ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/themes/custom
