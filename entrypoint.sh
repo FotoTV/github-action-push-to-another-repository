@@ -39,6 +39,7 @@ echo "running composer install"
 
 ls -la
 ls -la drupal/sites/all/modules/custom
+ls -la drupal/sites/all/themes/custom
 cd "$COMPOSER_DIRECTORY" && composer install && cd -
 ls -la drupal/sites/all/modules/custom
 
