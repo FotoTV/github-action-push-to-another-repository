@@ -44,6 +44,11 @@ ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/themes/custom
 cd "$COMPOSER_DIRECTORY" && composer install && cd -
 ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/modules/custom
 ls -la "$COMPOSER_DIRECTORY"/drupal/sites/all/themes/custom
+ls -la /github/workspace
+ls -la /github/workspace/drupal
+ls -la /github/workspace/drupal/sites/
+ls -la /github/workspace/drupal/sites/all
+ls -la /github/workspace/drupal/sites/all/themes
 
 # rm .git repos in subdirectories
 find . -name .git | grep -v  "\\$COMPOSER_DIRECTORY/.git" | xargs rm -rf
